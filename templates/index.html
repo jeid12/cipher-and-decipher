@@ -4,13 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter Text</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center vertically */
+        }
+
+        /* Card container */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            width: 100%; /* Responsive width */
+        }
+
+        /* Card title */
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Input field styling */
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter Text to Generate Random Key</h1>
-    <form action="/generate_key" method="post">
-        <label for="text">Text:</label><br>
-        <textarea name="text" rows="4" cols="50" required></textarea><br><br>
-        <input type="submit" value="Generate Random Key">
-    </form>
+    <div class="card">
+        <h1>Enter Text to Generate Random Key</h1>
+        <form action="/generate_key" method="post">
+            <label for="text">Text:</label><br>
+            <textarea name="text" rows="4" cols="50" required></textarea><br>
+            <input type="submit" value="Generate Random Key">
+        </form>
+    </div>
 </body>
 </html>
