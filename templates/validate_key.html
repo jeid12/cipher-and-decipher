@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Key</title>
+</head>
+<body>
+    <h1>Enter the Generated Key</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <form action="/validate_key" method="post">
+        <label for="entered_key">Generated Key (0-25):</label>
+        <input type="number" name="entered_key" min="0" max="25" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

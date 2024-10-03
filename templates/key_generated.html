@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generated</title>
+</head>
+<body>
+    <h1>Key and Text are Valid</h1>
+    
+    {% if text and key %}
+        <p><strong>Text:</strong> {{ text }}</p>
+        <p><strong>Generated Key (Random Number):</strong> {{ key }}</p>
+    {% endif %}
+    
+    <h2>Choose Action</h2>
+    <form action="/key_generated" method="post">
+        <input type="radio" name="action" value="encrypt" checked> Encrypt<br>
+        <input type="radio" name="action" value="decrypt"> Decrypt<br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% if result %}
+        <h2>{{ operation }} Result</h2>
+        <p><strong>Result:</strong> {{ result }}</p>
+    {% endif %}
+
+    <a href="/">Go Back</a>
+</body>
+</html>
